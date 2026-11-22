@@ -18,22 +18,18 @@ Atividade prática da disciplina **Linguagens de Programação**.
 
 ## Como executar
 
-Primeiro confira se o Java 17 ou superior está instalado:
+Requer Java 17 ou superior.
 
-```bash
-java -version
-```
+### macOS
 
-### macOS e Linux
-
-Se o Java não estiver instalado no macOS, instale pelo [Homebrew](https://brew.sh):
+1. Instale o Java (pule se `java -version` já mostrar 17 ou mais):
 
 ```bash
 brew install openjdk@17
 sudo ln -sfn "$(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk" /Library/Java/JavaVirtualMachines/openjdk-17.jdk
 ```
 
-No Terminal:
+2. Baixe, compile e rode:
 
 ```bash
 git clone https://github.com/AntonioNeto029/Biblioteca-java.git
@@ -43,27 +39,25 @@ java -cp out Main
 java -cp out testes.TesteBiblioteca
 ```
 
-- `javac` compila todos os arquivos de `src` para a pasta `out`
-- `java -cp out Main` roda a demonstração do sistema
-- `java -cp out testes.TesteBiblioteca` roda os testes
-
 ### Windows (PowerShell)
 
-Se o Java não estiver instalado, instale pelo `winget` (já vem no Windows 10 e 11):
+1. Instale o Java (pule se `java -version` já mostrar 17 ou mais) e reabra o PowerShell:
 
 ```powershell
 winget install EclipseAdoptium.Temurin.17.JDK
 ```
 
-Outra opção é baixar o instalador `.msi` do JDK 17 em [adoptium.net](https://adoptium.net) e, durante a instalação, marcar **Set JAVA_HOME** e **Add to PATH**. Depois de instalar, feche e abra o PowerShell de novo e confira com `java -version`.
-
-Dentro da pasta do repositório:
+2. Baixe, compile e rode:
 
 ```powershell
+git clone https://github.com/AntonioNeto029/Biblioteca-java.git
+cd Biblioteca-java
 javac -d out (Get-ChildItem -Recurse src -Filter *.java).FullName
 java -cp out Main
 java -cp out testes.TesteBiblioteca
 ```
+
+`Main` roda a demonstração e `testes.TesteBiblioteca` roda os testes.
 
 ## Estrutura
 
